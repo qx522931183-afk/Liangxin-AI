@@ -1,0 +1,158 @@
+# ============================================================
+# 梁 · Git 忽略规则
+# 注意：本文件必须保持 UTF-8 编码。若被存成 GBK，中文路径规则
+#      （如 求职材料/、表情包/**）会因字节不匹配而失效，
+#      结果本该忽略的私人文件会被提交上去。
+# ============================================================
+
+# ── 个人隐私 / 本地资料（重要：不要上传）────────────────────
+.workbuddy/
+求职材料/
+学习笔记/
+_name_change_backup/
+参考项目/
+代码备份/
+文档备份/
+杂项/
+备份/
+*.bak
+*.bak_*
+*.bak_before*
+
+# ── Python ──────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── 虚拟环境 / Conda ────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── IDE ─────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── 大模型文件（体积巨大，必须排除）─────────────────────────
+models/
+vision/models/*
+!vision/models/README.md
+Lab/HandsDetector/gesture_lab/models/keypoint_classifier.tflite
+Lab/HandsDetector/gesture_lab/models/keypoint_classifier_label.csv
+/VisionLab/models/
+/VisionLab/data/
+/VisionLab/logs/
+/VisionLab/docs/
+/VisionLab/**/__pycache__/
+/VisionLab/**/*.pyc
+
+# ── 运行时数据库与状态 ──────────────────────────────────────
+memory/*.db
+memory/*.db-*
+memory/*.json
+memory/last_active_side.json
+memory/proactive_settings.json
+memory/qq_session_map.json
+memory/wechat_session_map.json
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.session
+*.cookie
+*.cookies
+injector.log
+user_data/
+data/
+data/dairy_picture/
+
+# ── 用户凭据（防密钥泄露）───────────────────────────────────
+.env
+.env.*
+!.env.example
+user_config.json
+global_settings.json
+
+# ── OCR 运行时依赖 ──────────────────────────────────────────
+ocr/
+测试ocr/
+es.exe
+
+# ── 打包 / 临时产物 ─────────────────────────────────────────
+*.zip
+*.tar.gz
+*.7z
+package_esp32_index.json.json
+nul
+test_workspace/
+test_browser.py
+test/
+tests/
+
+# ── 本地素材（体积与版权）───────────────────────────────────
+assets/头像/
+assets/music/**/*.mp3
+assets/sound/**/*.mp3
+assets/*.jpg
+assets/*.png
+assets/*.mp4
+assets/*.mp3
+assets/原GIF/
+*.gif.bak
+*.wav
+*.docx
+docx_backup/
+lianxin_req.txt
+tatus
+梁心自习室.png
+梁心下一阶段架构基线与改造清单.md
+梁心虚拟世界.md
+梁心改进建议.md
+记忆胶囊改造方案/
+
+# 用户自定义表情包（本地素材，不上传）
+表情包/
+
+# ── 第三方开源项目（用户自行获取）───────────────────────────
+AstrBot/
+NapCatQQ/
+ChatTTS/
+GPT-SoVITS-v2pro/
+alibabacloud-nls-python-sdk/
+claude-code-main/
+
+# ── 本地索引 / 工具缓存 ─────────────────────────────────────
+.codegraph/
+graphify-out/
+graphify-out/cache/
+graphify-out/cost.json
+.graphifyignore
+.mcp.json
+CLAUDE.md
+.claude/
+.agents/
+AGENTS.md
+logs/
+game/
+powershell/
+"ovrdoze_data/"
+
+# 其它
+docs/
+
+# ── 大体积媒体素材（不上传，克隆后需自行准备）───────────────
+assets/GIF/
+assets/主界面背景图/
+assets/视频通话/
+assets/自习室/
+assets/预览图/
+
+# .gitignore 的旧编码备份
+*.gbk_backup
