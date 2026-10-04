@@ -34,7 +34,7 @@ The project is inspired by the Endless Library setting from *Anomaly Handler*. I
 - [Persona Control Hub](#persona-control-hub)
 - [Proactive consciousness](#proactive-consciousness)
 - [Study Room](#study-room)
-- [Time Capsule and Data Tide](#time-capsule-and-data-tide)
+- [Data Tide](#data-tide)
 - [Tools, vision, and voice](#tools-vision-and-voice)
 - [Skills and MCP](#skills-and-mcp)
 - [Optional Integrations](#optional-integrations)
@@ -56,7 +56,6 @@ The project is inspired by the Endless Library setting from *Anomaly Handler*. I
 | Personas | Create, validate, preview, hot-activate, and switch persona profiles for new conversations |
 | Proactive presence | Time-aware proactive chat, desktop observation, Bilibili browsing, idle activities, cooldowns, and pause controls |
 | Study Room | A focus workspace with tasks, Pomodoro sessions, growth records, a yearly heatmap, wallpapers, and notes |
-| Time Capsule | Shared journals, a timeline, anonymous messages, a collection space, migration of legacy diaries, and memory links |
 | Tools and media | Weather, files, browser automation, music, screenshots, camera input, OCR, image generation, and speech |
 | Bridges | Optional QQ WebSocket and WeChat AstrBot integrations |
 | Extensions | Dynamically discovered Skills packages and MCP services |
@@ -114,9 +113,9 @@ Persona profiles define identity, relationship framing, style, boundaries, and r
 
 Lianxin can initiate contact under explicit schedule, cooldown, and pause controls. Optional activities include proactive chat, desktop observation, Bilibili history-based browsing, idle behavior, and reminders. User input takes priority and can interrupt background behavior.
 
-### Study Room and Time Capsule
+### Study Room
 
-The Study Room provides a focused independent workspace built with PyQtWebEngine and QWebChannel. Time Capsule adds shared records, a timeline, private messages, collections, and links to local long-term memory. Both keep their data locally.
+The Study Room provides a focused independent workspace built with PyQtWebEngine and QWebChannel. All of its data is kept locally.
 
 ### Memory flow and safeguards
 
@@ -137,19 +136,6 @@ Memory is not treated as an instruction authority. Persona identity, privacy, pe
 The Ripple model records five slowly varying dimensions: positive affect, arousal, security, connection need, and pride. Appraisal evaluates the event and its context; dynamics smooth the change over time; tone generation stays within the active persona's boundaries. Emotional state can inform expression and proactive behavior, but it cannot claim unverified facts, bypass a permission check, or alter the persona's identity.
 
 ![Five-axis state view](assets/预览图/五轴状态界面.jpg)
-
-### Star Maps
-
-The application contains two interactive, read-only visualizations.
-
-- **Memory Star Map** shows memory objects, relations, source messages, timelines, and detail panels.
-- **Ripple Star Map** shows current emotional state, important events, relationship signals, and historical snapshots.
-
-Both are rendered with PyQt WebEngine and QWebChannel. A node can request a snapshot or open its source record, but browser-side views cannot directly modify memory.
-
-![Memory Star Map](assets/预览图/星图系统1.jpg)
-
-![Ripple Star Map](assets/预览图/星图系统2.jpg)
 
 ### Persona Control Hub
 
@@ -182,15 +168,7 @@ Lianxin Study Room is a separate focus space with a task list, Pomodoro-style ti
 - The room provides time review and personal-space views without mixing these records into the main conversation database.
 - PyQtWebEngine is part of the core dependency profile; a PyQt5-only installation cannot load this interface.
 
-### Time Capsule and Data Tide
-
-![Time Capsule: Today](assets/预览图/时间胶囊-今天.jpg)
-
-Time Capsule offers paired journal pages, a time corridor, a private tree-hole space, collections, legacy-diary migration, and explicit links to long-term memory. It is designed for local, reviewable records rather than an opaque archive.
-
-![Time Capsule: Timeline](assets/预览图/时间胶囊-时间长廊.jpg)
-
-![Time Capsule: Tree Hole](assets/预览图/时间胶囊-树洞.jpg)
+### Data Tide
 
 Data Tide presents local interaction and growth history in a coastal overview and achievement list. These views are product-facing representations of local records; they do not change the privacy boundary or upload personal data.
 
@@ -200,7 +178,7 @@ Data Tide presents local interaction and growth history in a coastal overview an
 
 ### Tools, vision, and voice
 
-The tool layer includes weather, system information, files, browser actions, music control, notes, reminders, tasks, and Time Capsule operations. Calls pass through capability discovery, request policy, permission boundaries, execution logging, result handling, retries, and loop breakers.
+The tool layer includes weather, system information, files, browser actions, music control, notes, reminders, and tasks. Calls pass through capability discovery, request policy, permission boundaries, execution logging, result handling, retries, and loop breakers.
 
 Visual capabilities can include screenshots, camera input, OCR, image description, image generation, and local visual-event recognition such as presence, smiles, and simple gestures. Local event recognition can feed character animation, emotion, or proactive behavior without sending every video frame to a model.
 
@@ -208,9 +186,7 @@ Voice capabilities can include speech-to-text, full-duplex listening, interrupti
 
 ### Companion modes and hardware
 
-![Galgame mode, vision, and browsing](assets/预览图/Galgame模式+视觉理解+网页浏览.jpg)
-
-Optional modes include a Galgame presentation, desktop companion window states, standby voice companionship, shoulder-mounted camera control, human tracking, and visual-event inputs. Hardware and browser capabilities remain opt-in and are constrained by the same permission and safety layers as other tools.
+Optional modes include desktop companion window states, standby voice companionship, shoulder-mounted camera control, human tracking, and visual-event inputs. Hardware and browser capabilities remain opt-in and are constrained by the same permission and safety layers as other tools.
 
 ### Skills and MCP
 
@@ -278,7 +254,7 @@ python main.py
 
 | Command | Includes |
 |---|---|
-| `pip install -r requirements-core.txt` | Default desktop app, cloud chat, SQLite memory, Time Capsule, Study Room, and physical simulator |
+| `pip install -r requirements-core.txt` | Default desktop app, cloud chat, SQLite memory, Study Room, and physical simulator |
 | `pip install -r requirements-rag.txt` | Local semantic memory retrieval; installs PyTorch and downloads an embedding model on first use |
 | `pip install -r requirements-voice.txt` | Local speech input and audio processing |
 | `pip install -r requirements-vision.txt` | Camera, OCR, and visual processing |
