@@ -149,10 +149,31 @@ docs/
 
 # ── 大体积媒体素材（不上传，克隆后需自行准备）───────────────
 assets/GIF/
-assets/主界面背景图/
 assets/视频通话/
 assets/自习室/
-assets/预览图/
+
+# README 文档配图需要随仓库发布，所以这里用「排除目录内容 + 逐项放行」的写法。
+# 注意：不能直接写「assets/预览图/」把目录整体排除 —— Git 的规则是
+#      「父目录被排除时，无法再用 ! 重新包含其中的文件」，
+#      那样会导致 README 里的图片全部变成破图。
+assets/主界面背景图/*
+!assets/主界面背景图/0和1之间的少女.png
+!assets/主界面背景图/0和1之间的少女（红瞳）.png
+
+assets/预览图/*
+!assets/预览图/主界面.jpg
+!assets/预览图/功能区所有板块.jpg
+!assets/预览图/涟漪情感系统.jpg
+!assets/预览图/五轴状态界面.jpg
+!assets/预览图/星图系统1.jpg
+!assets/预览图/星图系统2.jpg
+!assets/预览图/莲心自习室界面.jpg
+!assets/预览图/时间胶囊-今天.jpg
+!assets/预览图/时间胶囊-时间长廊.jpg
+!assets/预览图/时间胶囊-树洞.jpg
+!assets/预览图/数据潮汐-海岸概览.jpg
+!assets/预览图/数据潮汐-成就列表.jpg
+!assets/预览图/Galgame模式+视觉理解+网页浏览.jpg
 
 # .gitignore 的旧编码备份
 *.gbk_backup
